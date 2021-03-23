@@ -1,0 +1,21 @@
+## Grow Lab
+
+I want to set up a automated grow system.
+
+## Motivation
+
+I'd rather program than garden and the thought of automating the process excites me. I also have a bunch of spare parts I need to find a use for so it feels like this was supposed to happen.
+
+## Description and current status
+
+This program lives on a raspberry pi and is accessible through ssh. If you run the main file you will be shown a menu with options as to what you can do. The high_low file is automated through a cronjob. This program is ran every 20 minutes and will keep track of the highest and lowest recorded readings to data/data/json.
+
+### Goals
+
+<ul>
+  <li>Track record highs and lows</li>
+  <li>Graph information and figure out ways to visualize the data</li>
+  <li>Watch out, notify, and correct environmental conditions.</li>
+  <li>Automate watering => in the future this could mean a hydroponic system</li>
+  <li>Set up a camera I can activate/deactivate through ssh and stream via VLC</li>
+</ul>
