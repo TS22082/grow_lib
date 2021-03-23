@@ -10,7 +10,6 @@ with open("/home/pi/Documents/code/grow_lib/data/data.json", "r+") as f:
     current_data = DHT.data()
 
     # initialise an object with starting values
-
     data_updated = {"lowest_temp": lowest_tmp_recorded,
                     "highest_temp": highest_tmp_recorded}
 
