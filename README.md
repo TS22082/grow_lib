@@ -1,6 +1,6 @@
 ## Grow Lab
 
-I want to set up a automated grow system.
+I want to set up a automated grow system. You can follow the project on [hackaday.io](https://hackaday.io/project/177878-raspi-grow)
 
 ## Motivation
 
