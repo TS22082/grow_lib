@@ -8,7 +8,7 @@ I'd rather program than garden and the thought of automating the process excites
 
 ## Description and current status
 
-This program lives on a raspberry pi and is accessible through ssh. If you run the main file you will be shown a menu with options as to what you can do. The high_low file is automated through a cronjob. This program is ran every 20 minutes and will keep track of the highest and lowest recorded readings to data/data/json.
+This program lives on a raspberry pi and is accessible through ssh. If you run the main file you will be shown a menu with options to read from all sensors, the TSL2561, DHT22 or to quit the program. The high_low file is automated through a cronjob. This program is ran every 20 minutes and record the highest and lowest readings to data/data/json.
 
 ### Goals
 
