@@ -3,15 +3,23 @@ from lib import DHT
 
 with open("/home/pi/Documents/code/grow_lib/data/data.json", "r+") as f:
     data = json.load(f)  # load json from file as dictionary
-    # store data as the lowest_tmp_recorded
+    # store current lowest and highest recorded data
     lowest_tmp_recorded = data["lowest_temp"]
-    current_data = DHT.data()  # save tmp to be compared with the lowest recorded tmp
+    highest_tmp_recorded = data["highest_temp"]
+    # read data from sensors and save
+    current_data = DHT.data()
 
-    # if current temp is lower than the lowest recorded tmp
+    # initialise an object with starting values
+
+    data_updated = {"lowest_temp": lowest_tmp_recorded,
+                    "highest_temp": highest_tmp_recorded}
+
     if (current_data["tmp_f"] < lowest_tmp_recorded):
-        # create dictionary with new lowest temp
-        data_updated = {"lowest_temp": current_data["tmp_f"]}
-        f.seek(0)  # set cursor back to index 0 in file
-        f.write(json.dumps(data_updated))  # write data
-        f.truncate()  # resize file to current cursor position (0)
-        print("data.json modified")
+        data_updated["lowest_temp"] = current_data["tmp_f"]
+
+    if (current_data["tmp_f"] > highest_tmp_recorded):
+        data_updated["highest_temp"] = current_data["tmp_f"]
+
+    f.seek(0)  # set cursor back to index 0 in file
+    f.write(json.dumps(data_updated))  # write data
+    f.truncate()  # resize file to current cursor position (0)
